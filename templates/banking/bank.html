@@ -1,0 +1,20 @@
+<h2>step 1</h2>
+<a href=https://connect.stripe.com/express/oauth/authorize?redirect_uri='127.0.0.1:8000/banking/step2/'&client_id=ca_Dl0OaOtZqQ5sT6uDiI4iKaOsAGHkHx2I
+&state=verified>connect</a>
+
+
+<form action="{% url 'banking:precard' %}" method="POST">{% csrf_token %}
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_rtXYk6IQSRgZJdYQNBTTkfci"
+    data-name="Stripe.com"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-shipping-address='true'
+    data-billing-address='true'>
+  </script>
+</form>
+
+<h2>{{source}}</h2>
