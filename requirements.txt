@@ -1,2 +1,2 @@
 stripe==2.39.0
-Django==1.11.23
+Django==1.11.29
